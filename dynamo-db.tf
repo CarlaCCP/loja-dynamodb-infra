@@ -28,10 +28,6 @@ resource "aws_dynamodb_table" "pedido" {
     Environment = "production"
   }
 
-    attribute {
-    name = "id"
-    type = "S"
-  }
 }
 
 resource "aws_dynamodb_table" "produto" {
