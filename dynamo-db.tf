@@ -22,11 +22,15 @@ resource "aws_dynamodb_table" "pedido" {
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
   write_capacity = 20
-  hash_key       = "id"
 
   tags = {
     Name        = "pedido-tabela"
     Environment = "production"
+  }
+
+    attribute {
+    name = "id"
+    type = "S"
   }
 }
 
@@ -35,7 +39,6 @@ resource "aws_dynamodb_table" "produto" {
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
   write_capacity = 20
-  hash_key       = "id"
 
   tags = {
     Name        = "produto-tabela"
