@@ -62,7 +62,7 @@ resource "aws_dynamodb_table" "produto" {
     name = "id"
     type = "S"
   }
-  atribute {
+  attribute {
     name = "categoria"  
     type = "S"
   }
