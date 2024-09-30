@@ -36,7 +36,7 @@ resource "aws_dynamodb_table" "pedido" {
 
 
   global_secondary_index {
-    name               = "pedido-index"
+    name               = "status-index"
     hash_key           = "status"
     write_capacity     = 10
     read_capacity      = 10
