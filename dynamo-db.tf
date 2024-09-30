@@ -29,6 +29,21 @@ resource "aws_dynamodb_table" "pedido" {
     type = "S"
   }
 
+  attribute {
+    name = "status"
+    type = "S"
+  }
+
+
+  global_secondary_index {
+    name               = "pedido-index"
+    hash_key           = "status"
+    write_capacity     = 10
+    read_capacity      = 10
+    projection_type    = "ALL"
+  }
+
+
   tags = {
     Name        = "pedido-tabela"
     Environment = "production"
@@ -44,10 +59,23 @@ resource "aws_dynamodb_table" "produto" {
   hash_key       = "id"
 
   attribute {
-    
     name = "id"
     type = "S"
   }
+  atribute {
+    name = "categoria"  
+    type = "S"
+  }
+
+
+  global_secondary_index {
+    name               = "categoria-index"
+    hash_key           = "categoria"
+    write_capacity     = 10
+    read_capacity      = 10
+    projection_type    = "ALL"
+  }
+
   tags = {
     Name        = "produto-tabela"
     Environment = "production"
