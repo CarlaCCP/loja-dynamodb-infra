@@ -81,3 +81,21 @@ resource "aws_dynamodb_table" "produto" {
     Environment = "production"
   }
 }
+
+resource "aws_dynamodb_table" "pagamento" {
+  name           = "pagamento"
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 20
+  write_capacity = 20
+  hash_key       = "ID"
+
+  attribute {
+    name = "ID"
+    type = "S"
+  }
+
+  tags = {
+    Name        = "pagamento-tabela"
+    Environment = "production"
+  }
+}
