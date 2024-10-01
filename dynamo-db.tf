@@ -30,14 +30,14 @@ resource "aws_dynamodb_table" "pedido" {
   }
 
   attribute {
-    name = "status"
+    name = "orderStatus"
     type = "S"
   }
 
 
   global_secondary_index {
-    name               = "status-index"
-    hash_key           = "status"
+    name               = "orderStatus-index"
+    hash_key           = "orderStatus"
     write_capacity     = 10
     read_capacity      = 10
     projection_type    = "ALL"
@@ -87,10 +87,10 @@ resource "aws_dynamodb_table" "pagamento" {
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
   write_capacity = 20
-  hash_key       = "ID"
+  hash_key       = "id"
 
   attribute {
-    name = "ID"
+    name = "id"
     type = "S"
   }
 
