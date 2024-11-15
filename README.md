@@ -1,1 +1,1 @@
-# loja-dynamodb-infra     
+# loja-dynamodb-infra      
